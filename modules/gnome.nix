@@ -59,4 +59,7 @@
     [org.gnome.settings-daemon.peripherals.touchscreen]
     orientation-lock=true
   '';
+
+  # use gnome pinentry
+  programs.gnupg.agent.pinentryFlavor = "gnome3";
 }
