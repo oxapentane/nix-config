@@ -24,13 +24,8 @@
     gnome3.gnome-boxes
     gnome3.gnome-tweaks
     gnome3.evolution
-    pinentry_gnome
     gnome3.libsecret
     gnome3.nautilus-python
-    #fix theming
-    adwaita-qt
-    gtk2
-    gnome3.gnome-themes-extra
   ];
 
   # remove raw/unneded bits
@@ -52,7 +47,11 @@
   };
 
   # fix qt theming
-  programs.qt5ct.enable = true;
+  qt5 = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
 
   # disable screen rotation...
   services.xserver.desktopManager.gnome3.extraGSettingsOverrides = ''
