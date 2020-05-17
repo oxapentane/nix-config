@@ -81,6 +81,7 @@
     youtube-dl
     traceroute
     tree
+    zotero
   ];
 
   boot = {
