@@ -34,11 +34,13 @@
   ];
 
   # remove raw/unneded bits
-  environment.gnome3.excludePackages = [
-    pkgs.gnome3.epiphany
-    pkgs.gnome3.geary
-    pkgs.gnome3.gnome-software
-    pkgs.gnome3.gnome-packagekit
+  environment.gnome3.excludePackages = with pkgs.gnome3; [
+    epiphany
+    geary
+    gnome-software
+    gnome-packagekit
+    totem
+    gnome-music
   ];
 
   # explicitly enable some stuff
