@@ -15,7 +15,7 @@
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  networking.hostName = "dishwashersafe"; # Define your hostname.
+  networking.hostName = "nixbox"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
 
@@ -40,10 +40,10 @@
     deadbeef-with-plugins
     ffmpeg-full
     file
-    brave
+    firefox
     flameshot
     gimp
-    gitFull
+    gitAndTools.gitFull
     gnupg
     gnuplot
     gnuradio
@@ -74,7 +74,7 @@
     usbutils
     vim
     virtmanager
-    weechat
+    irssi
     wget
     wireguard
     xclip
@@ -89,16 +89,11 @@
       luks.devices = {
         root = {
           name = "root";
-          device = "/dev/disk/by-uuid/853e3942-b05c-45ff-adc2-730caa6b3c58";
+          device = "/dev/disk/by-uuid/4fbe7291-61b1-49e4-8cb9-68c102e80b7c";
           preLVM = true;
           allowDiscards = true;
         };
-        stuff = {
-          name = "stuff";
-          keyFile = "/stuff.key";
-        };
       };
-      prepend = [ "${/stuff.key.cpio.gz}" ];
     };
 
     # use systemd boot by default
@@ -112,9 +107,6 @@
 
   # update the microcode
   hardware.cpu.intel.updateMicrocode = true;
-
-  # wireguard bits
-  boot.extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
 
   # virtualization
   boot.kernelModules = [ "kvm-intel" ];
@@ -134,9 +126,6 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
-  # disable gui askpass
-  programs.ssh.askPassword = "";
 
   # smartcard support
   services.pcscd.enable = true;
@@ -192,12 +181,12 @@
   };
 
   # Users
-  users.users.undo = {
+  users.users.oxa = {
     createHome = true;
     extraGroups = [ "wheel" "audio" "video" "disk" "networkmanager"
     "systemd-journald" "wireshark" "libvirtd" "dialout"];
     group = "users";
-    home = "/home/undo";
+    home = "/home/oxa";
     isNormalUser = true;
     uid = 1000;
   };
