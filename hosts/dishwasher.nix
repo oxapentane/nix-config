@@ -4,18 +4,19 @@
   imports = [
     ./hardware-configuration.nix
     ./nix-config/modules/desktop.nix
-    ./nix-config/modules/gnome.nix
+    ./nix-config/modules/kde.nix
     ./nix-config/modules/neovim.nix
     ./nix-config/modules/zsh.nix
     ./nix-config/modules/hw-accel-intel.nix
     ./nix-config/modules/wireguard-mullvad.nix
     ./nix-config/modules/kernel-latest.nix
     ./nix-config/modules/tlp.nix
+    ./nix-config/modules/science.nix
   ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  networking.hostName = "nixbox"; # Define your hostname.
+  networking.hostName = "dishwasher"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
 
@@ -29,37 +30,21 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    R
-    aspell
-    aspellDicts.de
-    aspellDicts.en
-    aspellDicts.ru
     audacity
-    bind
     blender
     deadbeef-with-plugins
-    ffmpeg-full
-    file
     firefox
     flameshot
     gimp
-    gitAndTools.gitFull
-    gnupg
-    gnuplot
     gnuradio
     gqrx
-    graphviz
-    htop
     inkscape
     kdenlive
     keepassxc
     kicad
-    killall
     libreoffice
     mpv-with-scripts
     nextcloud-client
-    nmap
-    opensc
     pavucontrol
     pciutils
     profanity
@@ -68,20 +53,10 @@
     seafile-client
     signal-desktop
     tdesktop
-    texlive.combined.scheme-full
-    tmux
     urh
-    usbutils
-    vim
     virtmanager
-    irssi
-    wget
     wireguard
-    xclip
     youtube-dl
-    traceroute
-    tree
-    zotero
   ];
 
   boot = {
@@ -90,7 +65,7 @@
       luks.devices = {
         root = {
           name = "root";
-          device = "/dev/disk/by-uuid/4fbe7291-61b1-49e4-8cb9-68c102e80b7c";
+          device = "/dev/disk/by-uuid/9108c217-0136-48bc-a6f3-de7b6363cf5e";
           preLVM = true;
           allowDiscards = true;
         };
@@ -122,33 +97,6 @@
     enable = true;
     package = pkgs.wireshark-qt;
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
-  # smartcard support
-  services.pcscd.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-
-  # hardware block
-  hardware = {
-    pulseaudio = {
-      enable = true;
-      package = pkgs.pulseaudioFull;
-      extraModules = [ pkgs.pulseaudio-modules-bt ];
-    };
-
-    bluetooth.enable = true;
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
   services.xserver.libinput = {

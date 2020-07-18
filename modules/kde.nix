@@ -10,6 +10,7 @@
     ark
     dolphin
     filelight
+    gajim
     gwenview
     kaddressbook
     kcalc
@@ -31,6 +32,7 @@
 
   # enable firefox integration
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+  xdg.portal.gtkUsePortal = true;
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm = {

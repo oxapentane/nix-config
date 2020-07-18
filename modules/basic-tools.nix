@@ -1,0 +1,23 @@
+{ config, pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    file
+    bind
+    gitAndTools.gitFull
+    gnupg
+    graphviz
+    htop
+    nmap
+    tree
+    vim
+    irssi
+    usbutils
+    tmux
+    ffmpeg-full
+    traceroute
+    xclip
+    wget
+    killall
+  ];
+}
