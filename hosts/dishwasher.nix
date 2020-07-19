@@ -2,16 +2,16 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./nix-config/modules/desktop.nix
-    ./nix-config/modules/kde.nix
-    ./nix-config/modules/neovim.nix
-    ./nix-config/modules/zsh.nix
-    ./nix-config/modules/hw-accel-intel.nix
-    ./nix-config/modules/wireguard-mullvad.nix
-    ./nix-config/modules/kernel-latest.nix
-    ./nix-config/modules/tlp.nix
-    ./nix-config/modules/science.nix
+    /etc/nixos/hardware-configuration.nix
+    ../modules/desktop.nix
+    ../modules/kde.nix
+    ../modules/neovim.nix
+    ../modules/zsh.nix
+    ../modules/hw-accel-intel.nix
+    ../modules/wireguard-mullvad.nix
+    ../modules/kernel-latest.nix
+    ../modules/tlp.nix
+    ../modules/science.nix
   ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
