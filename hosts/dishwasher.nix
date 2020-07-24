@@ -41,7 +41,6 @@
     kdenlive
     keepassxc
     kicad
-    libreoffice
     mpv-with-scripts
     nextcloud-client
     pavucontrol
@@ -56,6 +55,7 @@
     virtmanager
     wireguard
     youtube-dl
+    hackrf
   ];
 
   boot = {
