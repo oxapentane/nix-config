@@ -4,8 +4,8 @@
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../modules/desktop.nix
-    ../modules/kde.nix
-    ../modules/neovim.nix
+    ../modules/gnome.nix
+    ../modules/emacs.nix
     ../modules/zsh.nix
     ../modules/hw-accel-intel.nix
     ../modules/wireguard-mullvad.nix
@@ -33,7 +33,6 @@
     audacity
     blender
     deadbeef-with-plugins
-    firefox
     flameshot
     gimp
     gnuradio
