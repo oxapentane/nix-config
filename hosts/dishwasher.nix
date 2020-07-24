@@ -12,6 +12,7 @@
     ../modules/kernel-latest.nix
     ../modules/tlp.nix
     ../modules/science.nix
+    ../modules/lorri.nix
   ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
