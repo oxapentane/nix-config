@@ -3,13 +3,13 @@
 {
   environment.systemPackages = with pkgs; [
     # (import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/master.tar.gz") {}).neovim
+    vim
     neovim
-    (import ./emacs-package.nix { inherit pkgs; })
   ];
 
   # set appropriate environ variables
   environment.variables = {
-    EDITOR = "nvim";
+    EDITOR = "vi";
     VISUAL = "nvim";
     GIT_EDITOR = "nvim";
   };

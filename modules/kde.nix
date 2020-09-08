@@ -9,7 +9,9 @@
   environment.systemPackages = with pkgs; [
     ark
     dolphin
+    dragon
     filelight
+    firefox
     gajim
     gwenview
     kaddressbook

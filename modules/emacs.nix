@@ -7,9 +7,14 @@
     hunspellDicts.de_DE
     hunspellDicts.en_US
     hunspellDicts.ru_RU
-    # still nice to have around
-    neovim
+    # quite essential
+    vim
+    # lsp servers
+    lua53Packages.digestif # LaTeX
+    clang-tools # C-family
+    clang_10
   ];
+
   services.emacs = {
     enable = true;
     defaultEditor = true;

@@ -5,7 +5,7 @@
     /etc/nixos/hardware-configuration.nix
     ../modules/desktop.nix
     ../modules/gnome.nix
-    ../modules/emacs.nix
+    ../modules/neovim.nix
     ../modules/zsh.nix
     ../modules/hw-accel-intel.nix
     ../modules/wireguard-mullvad.nix
@@ -14,6 +14,8 @@
     ../modules/science.nix
     ../modules/lorri.nix
   ];
+
+  nix.maxJobs = 8;
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
@@ -46,7 +48,6 @@
     nextcloud-client
     pavucontrol
     pciutils
-    profanity
     qbittorrent
     screen-message
     seafile-client
@@ -104,9 +105,9 @@
     disableWhileTyping = true;
     naturalScrolling = true;
     scrollMethod = "twofinger";
-    tapping = false;
+    tapping = true;
     accelProfile = "adaptive";
-    clickMethod = "clickfinger";
+    # clickMethod = "clickfinger";
   };
 
   # global environment
@@ -117,6 +118,7 @@
     shellAliases = {
       o="xdg-open";
       e="$EDITOR";
+      v="$VISUAL";
       cpy="xclip -selection clipboard";
       pst="xclip -selection clipboard -o";
       grep = "grep --color=auto";
