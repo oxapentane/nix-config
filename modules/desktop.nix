@@ -26,7 +26,6 @@
     noto-fonts-extra
     proggyfonts
     symbola
-    terminus_font.otb
     twemoji-color-font
     twitter-color-emoji
   ];
