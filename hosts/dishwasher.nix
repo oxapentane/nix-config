@@ -17,8 +17,6 @@
 
   nix.maxJobs = 8;
 
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
   networking.hostName = "dishwasher"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
@@ -61,17 +59,7 @@
   ];
 
   boot = {
-    # extra encryption config
-    initrd = {
-      luks.devices = {
-        root = {
-          name = "root";
-          device = "/dev/disk/by-uuid/9108c217-0136-48bc-a6f3-de7b6363cf5e";
-          preLVM = true;
-          allowDiscards = true;
-        };
-      };
-    };
+    supportedFilesystems = ["btrfs"];
 
     # use systemd boot by default
     loader = {
@@ -84,6 +72,7 @@
 
   # update the microcode
   hardware.cpu.intel.updateMicrocode = true;
+  hardware.enableAllFirmware = true;
 
   # virtualization
   boot.kernelModules = [ "kvm-intel" ];
@@ -146,6 +135,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "21.03"; # Did you read the comment?
 
 }
