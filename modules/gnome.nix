@@ -28,18 +28,7 @@
     gnome3.libsecret
     gnome3.nautilus-python
     firefox-wayland
-    (chromium.override { enableVaapi = true; })
   ];
-
-  # chromium is the browser
-  programs.chromium = {
-    enable = true;
-    extraOpts = {
-      "BrowserSignin" = 0;
-      "SyncDisabled" = true;
-      "PasswordManagerEnabled" = false;
-    };
-  };
 
   # remove raw/unneded bits
   environment.gnome3.excludePackages = with pkgs.gnome3; [
@@ -56,7 +45,6 @@
     evolution-data-server.enable = true;
     gnome-keyring.enable = true;
     gnome-online-accounts.enable = true;
-    #+TMP_FIX games.enable = true;
   };
 
   # fix qt theming
