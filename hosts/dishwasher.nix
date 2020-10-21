@@ -46,7 +46,6 @@
     nextcloud-client
     pavucontrol
     pciutils
-    qbittorrent
     screen-message
     seafile-client
     signal-desktop
@@ -102,7 +101,7 @@
   # global environment
   environment = {
     variables = {
-      PAGER = "less";
+      PAGER = "less -F";
     };
     shellAliases = {
       o="xdg-open";

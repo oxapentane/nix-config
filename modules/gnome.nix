@@ -28,6 +28,8 @@
     gnome3.libsecret
     gnome3.nautilus-python
     firefox-wayland
+    qbittorrent
+    libcloudproviders
   ];
 
   # remove raw/unneded bits
