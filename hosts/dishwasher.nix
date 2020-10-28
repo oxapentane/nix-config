@@ -3,16 +3,17 @@
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ../modules/desktop.nix
-    ../modules/gnome.nix
-    ../modules/neovim.nix
-    ../modules/zsh.nix
-    ../modules/hw-accel-intel.nix
-    ../modules/wireguard-mullvad.nix
-    ../modules/kernel-latest.nix
-    ../modules/tlp.nix
-    ../modules/science.nix
-    ../modules/lorri.nix
+    ../common/emacs.nix
+    ../common/desktop.nix
+    ../common/kde.nix
+    ../common/zsh.nix
+    ../common/hw-accel-intel.nix
+    ../common/wireguard-mullvad.nix
+    ../common/kernel-latest.nix
+    ../common/tlp.nix
+    ../common/science.nix
+    ../common/lorri.nix
+    ../common/rust-playground.nix
   ];
 
   nix.maxJobs = 8;

@@ -7,9 +7,10 @@
     privateKeyFile = "/etc/nixos/secrets/mullvad";
     peers = [
       {
-        publicKey = "XTdlx3YmLb1vg1NsruXYmfzP6FZKmZR90Vr3u9kJ7S0=";
+        publicKey = "vtqDtifokiHna0eBshGdJLedj/lzGW+iDvWKx+YjDFs=";
+                  # "XTdlx3YmLb1vg1NsruXYmfzP6FZKmZR90Vr3u9kJ7S0=";
         allowedIPs = [ "0.0.0.0/0" "::0/0" ];
-        endpoint = "185.213.155.130:51820";
+        endpoint = "193.27.14.98:51820";
       }
     ];
   };

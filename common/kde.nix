@@ -30,6 +30,8 @@
     sddm-kcm
     spectacle
     yakuake
+    qbittorrent
+    elisa
   ];
 
   # enable firefox integration
@@ -45,4 +47,7 @@
 
   # enable kwallet
   security.pam.services.sddm.enableKwallet = true;
+
+  # use qt-flavoured pinentry
+  programs.gnupg.agent.pinentryFlavor = "qt";
 }
