@@ -43,7 +43,6 @@
     kdenlive
     keepassxc
     kicad
-    mpv-with-scripts
     nextcloud-client
     pavucontrol
     pciutils

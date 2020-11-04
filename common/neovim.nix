@@ -5,6 +5,9 @@
     # (import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/master.tar.gz") {}).neovim
     vim
     neovim
+
+    fzf
+    ripgrep
   ];
 
   # set appropriate environ variables

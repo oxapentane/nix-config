@@ -9,6 +9,8 @@
     hunspellDicts.ru_RU
     # quite essential
     vim
+    # nice to keep around
+    neovim
     # lsp servers
     lua53Packages.digestif # LaTeX
     clang-tools # C-family
