@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
-
+let
+  stable = import <nixos-stable> {config = { allowUnfree = true; }; };
+in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ../common/emacs.nix
+    ../common/neovim.nix
     ../common/desktop.nix
-    ../common/kde.nix
-    ../common/zsh.nix
+    ../common/gnome.nix
+    ../common/fish.nix
     ../common/hw-accel-intel.nix
     ../common/wireguard-mullvad.nix
     ../common/kernel-latest.nix
@@ -29,6 +31,23 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+
+  # overlays
+  nixpkgs.overlays = [
+    (self: super:
+    {
+      nextcloud-client = super.nextcloud-client.overrideAttrs (old: {
+        version = "3.0.2";
+
+        src = super.fetchFromGitHub {
+          owner = "nextcloud";
+          repo = "desktop";
+          rev = "v3.0.2";
+          sha256 = "0qzriiaj6sjdkgh61iihvpsvhi0kvfwjz1vvjnwdlfdx2s4xmv24";
+        };
+      });
+    })
+  ];
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -55,9 +74,13 @@
     wireguard
     youtube-dl
     hackrf
+    anki
   ];
 
+  services.fstrim.enable = true;
+
   boot = {
+    # kernelParams = [ "intel_idle.max_cstate=1" "i915.enable_dc=0" ]; # should fix broken intel graphics driver
     supportedFilesystems = ["btrfs"];
 
     # use systemd boot by default
@@ -126,6 +149,7 @@
     "systemd-journald" "wireshark" "libvirtd" "dialout"];
     group = "users";
     home = "/home/oxa";
+    shell = pkgs.fish;
     isNormalUser = true;
     uid = 1000;
   };

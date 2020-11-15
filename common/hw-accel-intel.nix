@@ -19,5 +19,4 @@
     "i915.enable_psr=2"
   ];
 
-  services.fstrim.enable = true;
 }
