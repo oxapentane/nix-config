@@ -5,6 +5,7 @@
     file
     bind
     gitAndTools.gitFull
+    mercurialFull
     gnupg
     graphviz
     htop
