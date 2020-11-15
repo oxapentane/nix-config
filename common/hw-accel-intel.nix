@@ -2,10 +2,6 @@
 { config, pkgs, ... }:
 
 {
-  # full monte intel hw acceleration
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
