@@ -16,4 +16,8 @@
     VISUAL = "nvim";
     GIT_EDITOR = "nvim";
   };
+  environment.shellAliases = {
+    vf="$VISUAL $(fzf)";
+    vff="$VISUAL $(ls|fzf)";
+  };
 }
