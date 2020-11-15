@@ -28,6 +28,7 @@
     symbola
     twemoji-color-font
     twitter-color-emoji
+    nerdfonts
   ];
 
   fonts.enableDefaultFonts = true;
