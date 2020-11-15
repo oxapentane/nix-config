@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     ark
     dolphin
-    dragon
+    vlc
     filelight
     firefox
     gajim
@@ -24,6 +24,10 @@
     kdeApplications.kompare
     kdeApplications.korganizer
     kdeApplications.okular
+    kdeApplications.pim-sieve-editor
+    kdeApplications.kdepim-apps-libs
+    kdeApplications.kdepim-addons
+    kdeApplications.pim-data-exporter
     kleopatra
     kwalletcli
     okteta
@@ -31,7 +35,6 @@
     spectacle
     yakuake
     qbittorrent
-    elisa
   ];
 
   # enable firefox integration
