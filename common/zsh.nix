@@ -13,8 +13,6 @@
       plugins = [
         "colored-man-pages"
         "colorize"
-        "git"
-        "tmux"
       ];
     };
   };
