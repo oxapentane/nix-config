@@ -29,6 +29,6 @@
   services.emacs = {
     enable = true;
     defaultEditor = true;
-    package = with pkgs; ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [ epkgs.vterm epkgs.pdf-tools ]));
+    package = with pkgs; ((emacsPackagesNgGen emacsGcc).emacsWithPackages (epkgs: [ epkgs.vterm epkgs.pdf-tools ]));
   };
 }

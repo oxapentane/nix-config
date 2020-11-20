@@ -5,7 +5,7 @@ in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ../common/neovim.nix
+    ../common/emacs.nix
     ../common/desktop.nix
     ../common/gnome.nix
     ../common/zsh.nix
