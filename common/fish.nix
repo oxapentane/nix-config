@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   programs.fish = {
@@ -16,8 +16,4 @@
       completions.enable = true;
     };
   };
-
-  # starship as a prompt
-  environment.systemPackages = [ pkgs.starship ];
-  programs.fish.promptInit = "starship init fish | source";
 }

@@ -7,9 +7,15 @@
     enableCompletion = true;
     vteIntegration = true;
     syntaxHighlighting.enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "sunrise";
+      plugins = [
+        "colored-man-pages"
+        "colorize"
+        "git"
+        "tmux"
+      ];
+    };
   };
-
-  # starship as a prompt
-  environment.systemPackages = [ pkgs.starship ];
-  programs.zsh.promptInit = "eval $(starship init zsh)";
 }
