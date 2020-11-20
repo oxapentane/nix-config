@@ -8,7 +8,7 @@ in
     ../common/neovim.nix
     ../common/desktop.nix
     ../common/gnome.nix
-    ../common/fish.nix
+    ../common/zsh.nix
     ../common/hw-accel-intel.nix
     ../common/wireguard-mullvad.nix
     ../common/kernel-latest.nix
@@ -31,23 +31,6 @@ in
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
-
-  # overlays
-  nixpkgs.overlays = [
-    (self: super:
-    {
-      nextcloud-client = super.nextcloud-client.overrideAttrs (old: {
-        version = "3.0.2";
-
-        src = super.fetchFromGitHub {
-          owner = "nextcloud";
-          repo = "desktop";
-          rev = "v3.0.2";
-          sha256 = "0qzriiaj6sjdkgh61iihvpsvhi0kvfwjz1vvjnwdlfdx2s4xmv24";
-        };
-      });
-    })
-  ];
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -75,6 +58,8 @@ in
     youtube-dl
     hackrf
     anki
+    nnn
+    newsboat
   ];
 
   services.fstrim.enable = true;
@@ -149,7 +134,6 @@ in
     "systemd-journald" "wireshark" "libvirtd" "dialout"];
     group = "users";
     home = "/home/oxa";
-    shell = pkgs.fish;
     isNormalUser = true;
     uid = 1000;
   };
