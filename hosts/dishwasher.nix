@@ -59,7 +59,6 @@ in
     hackrf
     anki
     nnn
-    newsboat
   ];
 
   services.fstrim.enable = true;

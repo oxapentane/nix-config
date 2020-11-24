@@ -3,8 +3,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      bat
-      exa
       exa
       fd
       procs
@@ -14,7 +12,6 @@
     ];
 
     shellAliases = {
-      cat = "bat";
       ls = "exa";
       ll = "exa -l";
       l = "exa -al";
