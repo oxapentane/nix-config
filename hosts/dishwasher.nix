@@ -72,7 +72,8 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    tmpOnTmpfs = true;
+    tmpOnTmpfs = false;
+    cleanTmpDir = true;
     plymouth.enable = false;
   };
 
