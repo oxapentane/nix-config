@@ -6,6 +6,7 @@
   imports = [
     # desktop is a given :D
     ./desktop.nix
+    ./chromium.nix
   ];
 
   # display manager
@@ -29,7 +30,8 @@
     gnome3.nautilus-python
     firefox-wayland
     qbittorrent
-    libcloudproviders
+    gcr
+    gnome3.networkmanagerapplet
   ];
 
   # remove raw/unneded bits
@@ -53,7 +55,7 @@
   qt5 = {
     enable = true;
     platformTheme = "gnome";
-    style = "adwaita-dark";
+    style = "adwaita";
   };
 
   # disable screen rotation...
